@@ -4,6 +4,7 @@ tags={
 	"Gameplay"
 	"Events"
 }
-name="Create Alliance"
+picture="Thumbnail.png"
+name="Create Alliance Restored"
 supported_version="1.9.*"
-remote_file_id="2237350746"
+remote_file_id="2998684487"
