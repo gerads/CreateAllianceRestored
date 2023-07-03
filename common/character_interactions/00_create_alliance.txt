@@ -1,0 +1,77 @@
+﻿create_alliance_interaction = {
+	category = interaction_category_diplomacy
+	common_interaction = yes
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+
+	desc = create_alliance_interaction_desc
+	
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			NOT = { 
+				is_allied_to = scope:recipient
+				scope:actor = scope:recipient
+			}
+		}
+		
+		scope:recipient = { 
+			is_landed = yes
+		}
+	}
+	
+	
+	on_accept = {
+			scope:recipient = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+				add_opinion = {
+					modifier = perk_negotiated_alliance_opinion
+					target = scope:actor
+				}
+			}
+			scope:actor = {
+				allow_alliance = scope:recipient
+				create_alliance = {
+						target = scope:recipient
+						allied_through_owner = scope:actor
+						allied_through_target = scope:recipient
+				}
+			}
+			
+	}
+	
+	auto_accept = yes
+	
+	ai_will_do = 0
+}
+
+break_alliance_interaction = {
+	category = interaction_category_diplomacy
+	common_interaction = yes
+	use_diplomatic_range = no
+	ignores_pending_interaction_block = yes
+	
+	desc = break_alliance_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+		}
+		scope:recipient = {
+			is_allied_to = scope:actor
+		}
+	}
+	on_accept = {
+		scope:actor = {
+			allow_alliance = scope:recipient
+		}
+		scope:recipient = { # This opinion modifier controls the interaction, and is removed when breaking the alliance in any way (though on_actions)
+			remove_opinion = {
+				modifier = perk_negotiated_alliance_opinion
+				target = scope:actor
+			}
+		}
+	}
+	
+	auto_accept = yes
+	ai_will_do = 0
+}

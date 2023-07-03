@@ -1,0 +1,7 @@
+﻿# Localization by RHSoldat
+
+l_german:
+ create_alliance_interaction:0 "Bündnis schmieden"
+ create_alliance_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] wird dein Alliierter werden"
+ break_alliance_interaction:0 "Bündnis brechen"
+ break_alliance_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] wird nicht weiter dein Alliierter sein"

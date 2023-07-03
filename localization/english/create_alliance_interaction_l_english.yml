@@ -1,0 +1,5 @@
+﻿l_english:
+ create_alliance_interaction:0 "Create Alliance"
+ create_alliance_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] will become your Ally"
+ break_alliance_interaction:0 "Remove Alliance"
+ break_alliance_interaction_desc:0 "[recipient.GetShortUINameNoTooltip|U] will no longer be your Ally"
